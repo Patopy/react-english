@@ -20,21 +20,23 @@ function App() {
   return (
     <Container>
       
-      <h1>Learn English</h1>
-      <BrowserRouter>
+        <h1>Learn English</h1>
+        <BrowserRouter>
 
-        <MenuBreadcrumbs />
+            <MenuBreadcrumbs />
+            
+            <Routes>
+
+              <Route path= "/" element={<ListAll data={data} />} />
+              <Route path="/listartodos" element={<ListAll data={data} />} />
+              <Route path="/cardone"     element={<CardOne data={data} />} />
+
+            </Routes>
+
+        </BrowserRouter> 
         
-        <Routes>
+        <Piepagina />
 
-           <Route path= "/" element={<ListAll data={data} />} />
-           <Route path="/listartodos" element={<ListAll data={data} />} />
-           <Route path="/cardone"     element={<CardOne data={data} />} />
-
-        </Routes>
-      </BrowserRouter> 
-       
-      <Piepagina />
     </Container>
   );
 }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 //import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -40,8 +41,7 @@ export default function CardOne(props) {
      }else{
         setIndexcard(min);
      }
-    
-  }
+ }
 
   const handlePractica = (e)=>{
 
@@ -57,58 +57,65 @@ export default function CardOne(props) {
   }
   return (
     <>
-      <Card sx={{ mt:2.5, minWidth: 275, backgroundColor: lightBlue[200] }} >
+      <Card sx={{ mt:2.5, minWidth: 275, backgroundColor: lightBlue[100] }} >
           <CardContent sx={{ color:'blue'}} >
-  
-          <Typography variant="h4" component="div">
-            {data[indexcard].english}
-          </Typography>
+              <Typography  color="text.secondary">
+                Nro. {data[indexcard].row}
+              </Typography>
+              <Typography variant="h4" component="div">
+                {data[indexcard].english}
+              </Typography>
 
-          <Typography sx={{ mb: 1, mt:1 }} variant="h5" color="text.secondary">
-            {data[indexcard].spanish}
-          </Typography>
-
-          <Typography  color="text.secondary">
-            Nro. {data[indexcard].row}
-          </Typography>
-          
+              <Typography sx={{ mb: 1, mt:1 }} variant="h5" color="text.secondary">
+                {data[indexcard].spanish}
+              </Typography>   
         </CardContent>
         <CardActions>
-          <Button size="small" variant="primary" onClick={changeCard}>Siguiente</Button>
+          <Button size="medium" 
+               variant="contained" 
+                 color="primary" 
+               onClick={changeCard}>Siguiente</Button>
         </CardActions>
       </Card>
-      
-      <Box
-              component="form"
-              sx={{ '& > :not(style)': { mt: 1, width: '25ch' }, }}
-              noValidate
-              autoComplete="off"
-            >
+             <Grid container  spacing={2}>
+                <Grid item xs={6}>
+                    <Box
+                      component="form"
+                      sx={{ mt: 3, width: '100%' }}
+                      noValidate
+                      autoComplete="off"
+                    >
+                    <TextField id="idtextpractica" label="Practicar" 
+                          variant="outlined" 
+                          sx={{width:'100%'}}
+                          onChange={handlePractica}
+                          value={txtpractica}
+                          disabled={comparar}
+                          InputProps={{
+                            startAdornment: <InputAdornment position="start">
+                              <KeyboardAlt />
+                              </InputAdornment>,
+                          }}
+                        
+                    />
+                     </Box>    
+                 </Grid>
+                 <Grid item xs={1}>
+                      <Box sx={{ mt: 3, width: '100%' }}> 
+                           { comparar && 
+                              <FontAwesomeIcon icon={ faCheck} size="lg"   />  
+                            }
+                      </Box>  
+                  </Grid>
+            </Grid> 
 
-              <TextField id="idtextpractica" label="Practicar" 
-                    variant="outlined" 
-                    onChange={handlePractica}
-                    value={txtpractica}
-                    InputProps={{
-                      startAdornment: <InputAdornment position="start">
-                        <KeyboardAlt />
-                        </InputAdornment>,
-                    }}
-              />
-              
-              <Box> { comparar && 
-                      <FontAwesomeIcon icon={ faCheck}  />  }
-                    {/* !comparar && 
-                      <FontAwesomeIcon icon={ faKeyboard} /> */}
-              </Box>  
-        </Box>       
-
-    <Typography>
+          
+    {/* 
+        <Typography>
             {"Estado : " + (comparar ? "igual !!!":"Teclear") }
-    </Typography>
-     
-    <Typography>{txtpractica.trim().toLowerCase()}</Typography>
-   
+        </Typography>
+        <Typography>{txtpractica.trim().toLowerCase()}</Typography>
+    */} 
     </>
   );
 }

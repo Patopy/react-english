@@ -7,7 +7,7 @@ import {Link as RouterLink}  from 'react-router-dom';
 
 function handleClick(event) {
   event.preventDefault();
-  console.info('You clicked a breadcrumb.');
+  //console.info('You clicked a breadcrumb.');
 }
 
 export default function MenuBreadcrumbs() {
@@ -17,7 +17,7 @@ export default function MenuBreadcrumbs() {
 
         <Link component={RouterLink} underline="hover" color="inherit" 
               to="/cardone">
-          Card
+              práctica
         </Link>
         <Link
           component={RouterLink}
@@ -25,9 +25,9 @@ export default function MenuBreadcrumbs() {
           color="inherit"
           to="/listartodos/"
         >
-          Listar Todos
+          Todas las frases
         </Link>
-        <Typography color="text.primary">Breadcrumbs</Typography>
+        <Typography color="text.primary">Opciones</Typography>
       
       </Breadcrumbs>
     </div>
