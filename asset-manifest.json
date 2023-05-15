@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Patopy/react-english/static/css/main.e6c13ad2.css",
+    "main.js": "/Patopy/react-english/static/js/main.ec038165.js",
+    "static/js/787.dc0b4d3f.chunk.js": "/Patopy/react-english/static/js/787.dc0b4d3f.chunk.js",
+    "index.html": "/Patopy/react-english/index.html",
+    "main.e6c13ad2.css.map": "/Patopy/react-english/static/css/main.e6c13ad2.css.map",
+    "main.ec038165.js.map": "/Patopy/react-english/static/js/main.ec038165.js.map",
+    "787.dc0b4d3f.chunk.js.map": "/Patopy/react-english/static/js/787.dc0b4d3f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.ec038165.js"
+  ]
+}
